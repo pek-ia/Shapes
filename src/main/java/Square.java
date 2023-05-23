@@ -1,4 +1,4 @@
-public class Square implements Shape {
+public class Square implements Shape, Comparable<Shape> {
 
     private double length;
 
@@ -14,5 +14,10 @@ public class Square implements Shape {
     @Override
     public double getArea() {
         return length * length;
+    }
+
+    @Override
+    public int compareTo(Shape o) {
+        return (int) (this.getArea() - o.getArea());
     }
 }
